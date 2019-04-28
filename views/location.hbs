@@ -1,0 +1,21 @@
+<script>
+
+</script>
+<p>
+<table class = table>
+    <thread>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Time </th>
+    </thread>
+    <tbody>
+    {{#each result}}
+        <tr>
+            <td>{{this.latitude}}</td>
+            <td>{{this.longitude}}</td>
+            <td>{{this.time}}</td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
+</p>

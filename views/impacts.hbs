@@ -1,0 +1,80 @@
+<div class="container">
+    <canvas id="myChart"></canvas>
+</div>
+<script>
+    let myChart = document.getElementById('myChart').getContext('2d');
+
+    Chart.defaults.global.defaultFontFamily = 'Lato';
+    Chart.defaults.global.defaultFontSize = 16;
+    Chart.defaults.global.defaultFontColor = '#777';
+
+
+    let mainChart = new Chart(myChart, {
+        type: 'line', //bar, horizontal bar, pi, line, radar, polarArea
+        data: {
+            labels:[
+                //timeData
+                    '03:22:40','03:22:57','03:23:22','03:23:36',
+                    '03:23:55','03:24:08','03:24:33','03:24:49',
+                    '03:25:03','03:25:19','03:25:32','03:25:48',
+                    '03:26:03','03:26:29','03:26:55','03:27:13'
+            ],
+            datasets: [{
+                label: 'impacts' ,
+                data: [
+                    impactData
+                ],
+                backgroundColor: [
+
+                ],
+                borderWidth:1,
+                borderColor:'#777',
+                hoverBorderWidth:2,
+                hoverBorderColor:'#000'
+            }]
+        },
+        options:{
+            title: {
+                display: true,
+                text: 'Player Impacts Throughout Match',
+                fontSize: 20
+            },
+            legend: {
+                display: false,
+                position: 'right',
+                labels: {
+                    fontColor: '#000'
+                }
+            },
+            layout:{
+                padding:{
+                    left:50,
+                    right:0,
+                    bottom:0,
+                    top:0
+                }
+            },
+            tooltips:{
+                enabled: false
+            }
+        }
+
+    });
+</script>
+<p>
+<table class = table>
+    <thread>
+        <th>Impact's (G-Force)</th>
+        <th>Time </th>
+    </thread>
+    <tbody>
+    {{#each result}}
+        <tr>
+            <td>{{this.impacts}}</td>
+            <td>{{this.time}}</td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
+</p>
+
