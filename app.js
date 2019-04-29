@@ -18,7 +18,7 @@ var connect = mysql.createConnection({
     Host: "localhost",
     port: "3306",
     user: "player",
-    password: "root",
+    password: "magic",
     database: "playerinfo"
 });
 connect.connect(function(err) {

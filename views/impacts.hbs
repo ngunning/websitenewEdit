@@ -20,13 +20,13 @@
                     '03:26:03','03:26:29','03:26:55','03:27:13'
             ],
             datasets: [{
-                label: 'impacts' ,
+                label: 'Impact' ,
                 data: [
-                    impactData
+                    //impactData
+                    20,25.57,26.23,32.11,34.56,37.69,47.32,97.43,56.12,
+                        52.89,78.78,67.89,103.42,28.66,83.99,77.77
                 ],
-                backgroundColor: [
-
-                ],
+                backgroundColor: 'rgba(54, 162,235,0.6)',
                 borderWidth:1,
                 borderColor:'#777',
                 hoverBorderWidth:2,
@@ -54,8 +54,12 @@
                     top:0
                 }
             },
+            scales: {
+                xAxes: [{label: 'Time', display: true }],
+                yAxes: [{label: 'G-force',display: true}]
+            },
             tooltips:{
-                enabled: false
+                enabled: true
             }
         }
 
